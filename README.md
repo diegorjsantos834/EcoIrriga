@@ -12,7 +12,8 @@ O repositório reúne três partes:
 
 ## Visão geral
 
-![Landing page do Ecolrriga](docs/img/01-landing.png)
+<img width="1355" height="663" alt="01-landing" src="https://github.com/user-attachments/assets/8d686803-f744-4b02-a227-8897ad4cc899" />
+
 
 ## Hardware
 
