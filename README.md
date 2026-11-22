@@ -12,7 +12,7 @@ O repositório reúne três partes:
 
 ## Visão geral
 
-![Landing page do Ecolrriga]()
+![Landing page do Ecolrriga](docs/img/01-landing.png)
 
 ## Hardware
 
