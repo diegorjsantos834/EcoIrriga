@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ecolrriga — Tecnologia a favor do verde</title>
+  <meta name="description" content="Ecolrriga: um sistema inteligente de irrigação que detecta a umidade do solo e irriga apenas quando necessário, economizando água e cuidando do meio ambiente." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.161.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#inicio" class="brand">
+        <span class="brand-mark">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 3c-1.8 3.2-6 4.6-6 9a6 6 0 0 0 12 0c0-4.4-4.2-5.8-6-9Z" fill="currentColor" opacity=".9"/>
+            <path d="M12 20c-1.2-1.6-2-3.4-2.4-5.4" stroke="#fff" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="brand-name">Ecolrriga</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#inicio" class="nav-link active">Início</a>
+        <a href="#sobre" class="nav-link">Sobre</a>
+        <a href="#funcionalidades" class="nav-link">Funcionalidades</a>
+        <a href="#previsoes" class="nav-link">Previsões</a>
+        <a href="#projeto" class="nav-link">Projeto</a>
+        <a href="loja.php" class="nav-link">Loja</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#" class="btn btn-github" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 2C6.48 2 2 6.58 2 12.23c0 4.51 2.87 8.34 6.84 9.69.5.09.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.19-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05A9.3 9.3 0 0 1 12 6.93c.85 0 1.71.12 2.51.34 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.59.69.49A10.24 10.24 0 0 0 22 12.23C22 6.58 17.52 2 12 2Z"/>
+          </svg>
+          <span>GitHub</span>
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <span class="pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <rect x="7" y="4" width="10" height="16" rx="2"/>
+              <path d="M10 8h4M10 12h4M10 16h2"/>
+            </svg>
+            Sistemas Embarcados
+          </span>
+          <h1>Ecolrriga</h1>
+          <p class="hero-sub">Tecnologia a favor do verde</p>
+          <p class="hero-text">
+            Um sistema inteligente que detecta a umidade do solo e irriga sua vegetação
+            apenas quando necessário, economizando água e cuidando do meio ambiente.
+          </p>
+          <div class="hero-cta">
+            <a href="#projeto" class="btn btn-primary">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              Conheça o projeto
+            </a>
+            <a href="#previsoes" class="btn btn-ghost">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 17l5-6 4 4 5-7 4 4"/></svg>
+              Ver previsões
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal delay-1">
+          <div class="hero-image">
+            <img
+              src="https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?auto=format&fit=crop&w=1200&q=80"
+              alt="Muda de planta em solo úmido"
+              onerror="this.parentElement.classList.add('img-fallback'); this.remove();"
+            />
+            <div class="hero-overlay"></div>
+
+            <div class="bubble bubble-1">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+                <path d="M12 3c-3 4-6 6.6-6 10a6 6 0 0 0 12 0c0-3.4-3-6-6-10Z"/>
+              </svg>
+            </div>
+            <div class="bubble bubble-2">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+                <rect x="7" y="7" width="10" height="10" rx="1.5"/>
+                <path d="M10 3v4M14 3v4M10 17v4M14 17v4M3 10h4M3 14h4M17 10h4M17 14h4"/>
+              </svg>
+            </div>
+            <div class="bubble bubble-3">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+                <path d="M5 19c0-8 5-13 14-13 0 9-5 14-13 14"/>
+                <path d="M9 15c2-3 4.5-5 8-6.5"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FUNCIONALIDADES ================= -->
+    <section class="features" id="funcionalidades">
+      <div class="container features-grid">
+        <article class="feature-card reveal">
+          <span class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+              <path d="M12 3c-3 4-6 6.6-6 10a6 6 0 0 0 12 0c0-3.4-3-6-6-10Z"/>
+              <path d="M9.5 13.5a2.5 2.5 0 0 0 2.5 2.5"/>
+            </svg>
+          </span>
+          <div>
+            <h3>Monitoramento Inteligente</h3>
+            <p>Analisa a umidade do solo em tempo real.</p>
+          </div>
+        </article>
+
+        <article class="feature-card reveal delay-1">
+          <span class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+              <circle cx="12" cy="12" r="3.2"/>
+              <path d="M12 2.8v3M12 18.2v3M2.8 12h3M18.2 12h3M5.5 5.5l2.1 2.1M16.4 16.4l2.1 2.1M18.5 5.5l-2.1 2.1M7.6 16.4l-2.1 2.1"/>
+            </svg>
+          </span>
+          <div>
+            <h3>Irrigação Automatizada</h3>
+            <p>Aciona a irrigação apenas quando necessário.</p>
+          </div>
+        </article>
+
+        <article class="feature-card reveal delay-2">
+          <span class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+              <path d="M12 3c-3 4-6 6.6-6 10a6 6 0 0 0 12 0c0-3.4-3-6-6-10Z"/>
+              <path d="M12 16.5V9M9.5 11.5 12 9l2.5 2.5"/>
+            </svg>
+          </span>
+          <div>
+            <h3>Economia de Água</h3>
+            <p>Uso consciente e sustentável dos recursos hídricos.</p>
+          </div>
+        </article>
+
+        <article class="feature-card reveal delay-3">
+          <span class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+              <path d="M4 19V5M4 19h16"/>
+              <path d="M7.5 15.5l3.5-4 3 2.5 4.5-6"/>
+            </svg>
+          </span>
+          <div>
+            <h3>Previsões Precisas</h3>
+            <p>Antecipe períodos secos com dados meteorológicos.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================= PREVISÕES + 3D ================= -->
+    <section class="forecast" id="previsoes">
+      <div class="container forecast-grid">
+
+        <!-- Coluna esquerda: previsão -->
+        <div class="card forecast-card reveal">
+          <span class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+              <path d="M17.5 18a4.5 4.5 0 0 0 0-9 6 6 0 0 0-11.6 1.6A3.8 3.8 0 0 0 7 18h10.5Z"/>
+              <path d="M12 12v3.5M10.4 13.8 12 12l1.6 1.8"/>
+            </svg>
+          </span>
+          <h2>Previsão de Períodos Secos</h2>
+          <p class="card-lead">
+            Com base em dados meteorológicos, nosso sistema prevê os próximos momentos
+            de baixa umidade.
+          </p>
+
+          <div class="dry-alert">
+            <div class="dry-alert-left">
+              <span class="sun">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                  <circle cx="12" cy="12" r="4"/>
+                  <path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/>
+                </svg>
+              </span>
+              <div>
+                <small>Período</small>
+                <strong>Período Seco</strong>
+                <em>de 01/11 a 03/11</em>
+              </div>
+            </div>
+            <div class="dry-alert-right">
+              <span class="warn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                  <path d="M12 4 2.8 20h18.4L12 4Z"/>
+                  <path d="M12 10v4.2M12 17.2h.01"/>
+                </svg>
+              </span>
+              <div>
+                <small>Probabilidade</small>
+                <strong class="prob">85%</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="chart-wrap">
+            <canvas id="forecastChart" width="640" height="260" aria-label="Gráfico de probabilidade de período seco"></canvas>
+          </div>
+
+          <div class="forecast-actions">
+            <a href="#" class="btn btn-primary btn-sm">
+              Ver previsão completa
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Coluna direita: modelo 3D -->
+        <div class="card viewer-card reveal delay-1">
+          <div class="viewer-head">
+            <span class="card-icon green">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+                <path d="M12 3 3.5 7.5v9L12 21l8.5-4.5v-9L12 3Z"/>
+                <path d="M3.5 7.5 12 12l8.5-4.5M12 12v9"/>
+              </svg>
+            </span>
+            <div>
+              <h2>Modelo 3D do Projeto</h2>
+              <p>Explore o modelo do nosso projeto embarcado.</p>
+            </div>
+          </div>
+
+          <div class="viewer-stage" id="viewerStage">
+            <div class="viewer-loading" id="viewerLoading">
+              <span class="spinner"></span>
+              <span id="viewerLoadingText">Carregando modelo 3D…</span>
+            </div>
+
+            <canvas id="modelCanvas"></canvas>
+
+            <div class="viewer-toolbar">
+              <button class="icon-btn" id="btnReset" title="Redefinir vista" aria-label="Redefinir vista">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                  <path d="M3.5 12a8.5 8.5 0 1 1 2.6 6.1"/>
+                  <path d="M3.5 18v-5h5"/>
+                </svg>
+              </button>
+              <button class="icon-btn" id="btnFullscreen" title="Tela cheia" aria-label="Tela cheia">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                  <path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/>
+                </svg>
+              </button>
+            </div>
+
+            <div class="viewer-hint">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+                <path d="M12 3a9 9 0 1 1-6.4 2.7"/>
+                <path d="M5 3.5V8h4.5"/>
+              </svg>
+              Arraste para girar
+            </div>
+
+            <div class="viewer-dots" id="viewerDots" aria-hidden="true">
+              <span class="on"></span><span></span><span></span><span></span>
+            </div>
+          </div>
+
+          <div class="viewer-controls">
+            <div class="part-chips" id="partChips">
+              <button class="chip active" data-part="caixa"><i style="--c:#004E3E"></i>Caixa</button>
+              <button class="chip active" data-part="estantes"><i style="--c:#818C46"></i>Estantes</button>
+              <button class="chip active" data-part="arco"><i style="--c:#9EB2A4"></i>Arco</button>
+              <button class="chip active" data-part="tampa"><i style="--c:#E9A12E"></i>Tampa</button>
+            </div>
+            <label class="explode" title="Separar peças">
+              <span>Explosão</span>
+              <input type="range" id="explodeRange" min="0" max="100" value="0" />
+            </label>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= SOBRE ================= -->
+    <section class="about" id="sobre">
+      <div class="container about-grid">
+        <div class="card about-card reveal">
+          <span class="card-icon green">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+              <path d="M12 4c-2.5 3.4-6 5.2-6 9.5A6 6 0 0 0 18 14c0-4.3-3.5-6.1-6-10Z"/>
+              <path d="M12 20c-1.1-1.5-1.9-3.2-2.3-5.1"/>
+            </svg>
+          </span>
+          <h2>Sobre o Projeto</h2>
+          <p>
+            O Ecolrriga é um projeto de Sistemas Embarcados que utiliza sensores de umidade
+            do solo para automatizar a irrigação de forma eficiente e sustentável.
+          </p>
+          <ul class="check-list">
+            <li>
+              <span class="check">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>
+              </span>
+              Sensores de umidade do solo
+            </li>
+            <li>
+              <span class="check">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>
+              </span>
+              Controle automatizado da irrigação
+            </li>
+          </ul>
+          <a href="#projeto" class="btn btn-primary">
+            Saiba mais sobre o projeto
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+
+        <div class="about-visual reveal delay-1">
+          <img
+            src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80"
+            alt="Campo verde sustentável"
+            onerror="this.parentElement.classList.add('img-fallback'); this.remove();"
+          />
+          <div class="about-overlay">
+            <p>Inovação e sustentabilidade<br />para um <strong>futuro mais verde.</strong></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PROJETO / ESQUEMA ELÉTRICO ================= -->
+    <section class="project" id="projeto">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="card-icon green">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+              <rect x="7" y="7" width="10" height="10" rx="1.5"/>
+              <path d="M10 3v4M14 3v4M10 17v4M14 17v4M3 10h4M3 14h4M17 10h4M17 14h4"/>
+            </svg>
+          </span>
+          <h2>Projeto</h2>
+          <p>Do painel solar à bomba d'água: veja como os componentes do Ecolrriga se conectam.</p>
+        </div>
+
+        <div class="card scheme-card reveal delay-1">
+          <div class="carousel" id="projectCarousel" tabindex="0" aria-roledescription="carrossel" aria-label="Projeto: esquema e montagem">
+            <div class="carousel-viewport">
+              <div class="carousel-track">
+
+                <!-- Slide 1: esquema em SVG -->
+                <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="1 de 2: esquema elétrico">
+                  <span class="slide-tag">Esquema elétrico</span>
+                  <div class="scheme">
+            <svg viewBox="0 0 960 620" role="img" aria-label="Esquema elétrico do Ecolrriga: painel solar, módulo de carga, bateria 18650, Arduino Uno, sensor de umidade, LCD I2C, relé e bomba d'água">
+              <defs>
+                <style>
+                  .box   { fill: #FFFDF4; stroke: #E3E5D2; stroke-width: 1.6; }
+                  .box-a { fill: #EFF4E6; stroke: #BDD9A9; }
+                  .ttl   { font-family: Poppins, sans-serif; font-size: 13.5px; font-weight: 600; fill: #003D31; }
+                  .sub   { font-family: Inter, sans-serif; font-size: 10px; fill: #4B5548; }
+                  .wlab  { font-family: Inter, sans-serif; font-size: 9.5px; font-weight: 600; fill: #4B5548; }
+                  .wire  { fill: none; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+                  .flow  { fill: none; stroke: rgba(255,255,255,.85); stroke-width: 2.4; stroke-linecap: round;
+                           stroke-dasharray: 3 14; }
+                  .leg   { font-family: Inter, sans-serif; font-size: 10.5px; fill: #4B5548; }
+                </style>
+              </defs>
+
+              <!-- ============ FIOS ============ -->
+              <path class="wire" stroke="#D9534F" d="M204 62 H390"/>
+              <path class="flow" d="M204 62 H390"><animate attributeName="stroke-dashoffset" from="17" to="0" dur="0.9s" repeatCount="indefinite"/></path>
+              <path class="wire" stroke="#2F3A2E" d="M204 106 H390"/>
+
+              <path class="wire" stroke="#D9534F" d="M570 62 H756"/>
+              <path class="flow" d="M570 62 H756"><animate attributeName="stroke-dashoffset" from="17" to="0" dur="0.9s" repeatCount="indefinite"/></path>
+              <path class="wire" stroke="#2F3A2E" d="M570 106 H756"/>
+
+              <path class="wire" stroke="#D9534F" d="M846 128 V177 H566 M470 177 H140 V250"/>
+              <path class="flow" d="M846 128 V177 H566 M470 177 H140 V250"><animate attributeName="stroke-dashoffset" from="17" to="0" dur="1.1s" repeatCount="indefinite"/></path>
+              <path class="wire" stroke="#2F3A2E" d="M806 128 V216 H100 V250"/>
+
+              <path class="wire" stroke="#FF8700" d="M254 294 H390"/>
+              <path class="wire" stroke="#818C46" d="M254 318 H660 V282 H736"/>
+              <path class="wire" stroke="#9EB2A4" d="M254 334 H638 V308 H736"/>
+              <path class="wire" stroke="#818C46" d="M140 360 V504 H390"/>
+              <path class="wire" stroke="#4A90D9" d="M570 490 H736"/>
+              <path class="wire" stroke="#2F3A2E" d="M570 514 H736"/>
+
+              <g fill="#818C46">
+                <circle cx="204" cy="62" r="3.4"/><circle cx="390" cy="62" r="3.4"/>
+                <circle cx="570" cy="62" r="3.4"/><circle cx="756" cy="62" r="3.4"/>
+                <circle cx="254" cy="294" r="3.4"/><circle cx="390" cy="294" r="3.4"/>
+                <circle cx="140" cy="250" r="3.4"/><circle cx="140" cy="360" r="3.4"/>
+                <circle cx="390" cy="504" r="3.4"/><circle cx="570" cy="490" r="3.4"/>
+              </g>
+
+              <text class="wlab" x="285" y="52" text-anchor="middle">5V</text>
+              <text class="wlab" x="285" y="122" text-anchor="middle">GND</text>
+              <text class="wlab" x="660" y="52" text-anchor="middle">+</text>
+              <text class="wlab" x="660" y="122" text-anchor="middle">−</text>
+              <text class="wlab" x="320" y="167" text-anchor="middle">5V</text>
+              <text class="wlab" x="180" y="206" text-anchor="middle">GND</text>
+              <text class="wlab" x="318" y="284" text-anchor="middle">A0</text>
+              <text class="wlab" x="690" y="272" text-anchor="middle">SDA</text>
+              <text class="wlab" x="668" y="326" text-anchor="middle">SCL</text>
+              <text class="wlab" x="238" y="430" text-anchor="middle">D7</text>
+              <text class="wlab" x="650" y="480" text-anchor="middle">COM / NO</text>
+
+              <!-- ============ COMPONENTES ============ -->
+              <g>
+                <rect class="box" x="24" y="40" width="180" height="88" rx="16"/>
+                <g transform="translate(44 62)">
+                  <rect x="0" y="8" width="30" height="20" rx="3" fill="none" stroke="#004E3E" stroke-width="2"/>
+                  <path d="M10 8v20M20 8v20M0 18h30" stroke="#004E3E" stroke-width="1.4"/>
+                  <circle cx="27" cy="4" r="4.5" fill="#E9A12E"/>
+                  <path d="M27 -4v-2M34 4h2" stroke="#E9A12E" stroke-width="1.6" stroke-linecap="round"/>
+                </g>
+                <text class="ttl" x="88" y="76">Painel Solar</text>
+                <text class="sub" x="88" y="93">Energia renovável</text>
+              </g>
+
+              <g>
+                <rect class="box" x="390" y="40" width="180" height="88" rx="16"/>
+                <g transform="translate(410 62)">
+                  <rect x="2" y="6" width="26" height="22" rx="4" fill="none" stroke="#004E3E" stroke-width="2"/>
+                  <rect x="9" y="0" width="12" height="8" rx="2" fill="#9EB2A4"/>
+                  <circle cx="10" cy="17" r="2.4" fill="#E9A12E"/>
+                  <circle cx="20" cy="17" r="2.4" fill="#818C46"/>
+                </g>
+                <text class="ttl" x="450" y="76">Módulo de Carga</text>
+                <text class="sub" x="450" y="93">TP4056 + boost</text>
+              </g>
+
+              <g>
+                <rect class="box" x="756" y="40" width="180" height="88" rx="16"/>
+                <g transform="translate(776 66)">
+                  <rect x="4" y="4" width="26" height="14" rx="4" fill="none" stroke="#004E3E" stroke-width="2"/>
+                  <rect x="30" y="8" width="4" height="6" rx="1.4" fill="#004E3E"/>
+                  <rect x="7" y="7" width="9" height="8" rx="2" fill="#818C46"/>
+                </g>
+                <text class="ttl" x="820" y="76">Bateria 18650</text>
+                <text class="sub" x="820" y="93">Armazenamento</text>
+              </g>
+
+              <g>
+                <rect class="box box-a" x="24" y="250" width="230" height="110" rx="18"/>
+                <g transform="translate(46 276)">
+                  <rect x="0" y="0" width="46" height="34" rx="5" fill="none" stroke="#004E3E" stroke-width="2"/>
+                  <rect x="10" y="8" width="14" height="10" rx="2" fill="#9EB2A4"/>
+                  <rect x="34" y="4" width="9" height="7" rx="1.6" fill="#004E3E"/>
+                  <circle cx="8" cy="26" r="3" fill="#E9A12E"/>
+                  <path d="M0 42h46" stroke="#004E3E" stroke-width="2" stroke-linecap="round"/>
+                  <g fill="#004E3E">
+                    <circle cx="4" cy="42" r="1.6"/><circle cx="12" cy="42" r="1.6"/><circle cx="20" cy="42" r="1.6"/>
+                    <circle cx="28" cy="42" r="1.6"/><circle cx="36" cy="42" r="1.6"/><circle cx="44" cy="42" r="1.6"/>
+                  </g>
+                </g>
+                <text class="ttl" x="108" y="288">Arduino Uno</text>
+                <text class="sub" x="108" y="305">Cérebro do sistema</text>
+                <text class="sub" x="108" y="321">lê o sensor e irriga</text>
+              </g>
+
+              <g>
+                <rect class="box" x="390" y="250" width="180" height="88" rx="16"/>
+                <g transform="translate(412 268)">
+                  <rect x="2" y="0" width="16" height="9" rx="2.5" fill="#D9534F"/>
+                  <path d="M6 9v22M14 9v22" stroke="#9EB2A4" stroke-width="4" stroke-linecap="round"/>
+                  <path d="M22 16c3 2 3 6 0 8M27 12c5 4 5 12 0 16" stroke="#E9A12E" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+                </g>
+                <text class="ttl" x="454" y="286">Sensor de Solo</text>
+                <text class="sub" x="454" y="303">Sonda resistiva do solo</text>
+              </g>
+
+              <g>
+                <rect class="box" x="736" y="250" width="200" height="88" rx="16"/>
+                <g transform="translate(756 270)">
+                  <rect x="0" y="0" width="34" height="26" rx="4" fill="none" stroke="#004E3E" stroke-width="2"/>
+                  <rect x="4" y="5" width="26" height="16" rx="2" fill="#BDD9A9"/>
+                  <path d="M7 10h20M7 15h13" stroke="#003D31" stroke-width="1.6" stroke-linecap="round"/>
+                </g>
+                <text class="ttl" x="800" y="286">LCD 16×2 I2C</text>
+                <text class="sub" x="800" y="303">Exibe a umidade em %</text>
+              </g>
+
+              <g>
+                <rect class="box" x="470" y="150" width="96" height="54" rx="14"/>
+                <g transform="translate(493 166)">
+                  <circle cx="2" cy="11" r="3" fill="#004E3E"/>
+                  <circle cx="26" cy="11" r="3" fill="#004E3E"/>
+                  <path d="M2 11 22 2" stroke="#E9A12E" stroke-width="2.6" stroke-linecap="round"/>
+                </g>
+                <text class="sub" x="518" y="190" text-anchor="middle">Chave</text>
+              </g>
+
+              <g>
+                <rect class="box" x="390" y="460" width="180" height="88" rx="16"/>
+                <g transform="translate(412 480)">
+                  <rect x="0" y="2" width="28" height="22" rx="3.5" fill="none" stroke="#004E3E" stroke-width="2"/>
+                  <circle cx="14" cy="13" r="6" fill="none" stroke="#4A90D9" stroke-width="2"/>
+                  <path d="M28 8h8M28 18h8" stroke="#004E3E" stroke-width="2" stroke-linecap="round"/>
+                </g>
+                <text class="ttl" x="454" y="496">Relé 1 Canal</text>
+                <text class="sub" x="454" y="513">Aciona a bomba d'água</text>
+              </g>
+
+              <g>
+                <rect class="box" x="736" y="460" width="180" height="88" rx="16"/>
+                <g transform="translate(758 478)">
+                  <circle cx="14" cy="14" r="12" fill="none" stroke="#004E3E" stroke-width="2"/>
+                  <path d="M14 14c0-4 6-4 6 0s-6 8-6 8" fill="#4A90D9"/>
+                  <path d="M26 8h8v6" stroke="#004E3E" stroke-width="2" fill="none" stroke-linecap="round"/>
+                  <path d="M42 16c1.6 2 2.4 3.2 2.4 4.4a2.4 2.4 0 0 1-4.8 0c0-1.2.8-2.4 2.4-4.4Z" fill="#4A90D9"/>
+                </g>
+                <text class="ttl" x="800" y="496">Bomba d'Água</text>
+                <text class="sub" x="800" y="513">Irrigação controlada</text>
+              </g>
+
+              <g transform="translate(24 588)">
+                <line x1="0" y1="0" x2="26" y2="0" stroke="#D9534F" stroke-width="2.6" stroke-linecap="round"/>
+                <text class="leg" x="34" y="4">Alimentação (+)</text>
+                <line x1="146" y1="0" x2="172" y2="0" stroke="#2F3A2E" stroke-width="2.6" stroke-linecap="round"/>
+                <text class="leg" x="180" y="4">GND</text>
+                <line x1="230" y1="0" x2="256" y2="0" stroke="#FF8700" stroke-width="2.6" stroke-linecap="round"/>
+                <text class="leg" x="264" y="4">Sinal analógico</text>
+                <line x1="370" y1="0" x2="396" y2="0" stroke="#818C46" stroke-width="2.6" stroke-linecap="round"/>
+                <text class="leg" x="404" y="4">Sinal digital / I2C</text>
+                <line x1="538" y1="0" x2="564" y2="0" stroke="#4A90D9" stroke-width="2.6" stroke-linecap="round"/>
+                <text class="leg" x="572" y="4">Acionamento da bomba</text>
+              </g>
+            </svg>
+                  </div><!-- /scheme -->
+                </div><!-- /slide 1 -->
+
+                  <!-- Slide 2: foto do Fritzing -->
+                  <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="2 de 2: montagem no Fritzing">
+                    <span class="slide-tag">Montagem no Fritzing</span>
+                    <div class="scheme-photo">
+                      <img
+                        src="img/esquema.png"
+                        alt="Esquema de ligação do Ecolrriga no Fritzing: Arduino Uno, sensor de umidade, relé, LCD I2C, bateria 18650 e painel solar"
+                        onerror="this.closest('.scheme-photo').classList.add('missing'); this.remove();"
+                      />
+                      <div class="photo-placeholder">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+                          <rect x="3" y="5" width="18" height="14" rx="2.5"/>
+                          <circle cx="8.5" cy="10" r="1.8"/>
+                          <path d="m5 17 4.5-4.5L13 16l3-3 3 3.5"/>
+                        </svg>
+                        <p><strong>Foto do esquema Fritzing</strong></p>
+                        <p>Salve a imagem como <code>img/esquema.png</code> para ela aparecer aqui.</p>
+                      </div>
+                    </div>
+                  </div>
+
+              </div><!-- /track -->
+            </div><!-- /viewport -->
+
+            <button class="carousel-btn prev" data-dir="-1" aria-label="Slide anterior">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m14.5 6-6 6 6 6"/></svg>
+            </button>
+            <button class="carousel-btn next" data-dir="1" aria-label="Próximo slide">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m9.5 6 6 6-6 6"/></svg>
+            </button>
+
+            <div class="carousel-dots" role="tablist" aria-label="Escolher slide"></div>
+          </div><!-- /carousel -->
+
+          <ul class="scheme-notes">
+            <li><strong>Energia:</strong> painel solar carrega a bateria 18650 pelo TP4056; o boost entrega 5V ao Arduino.</li>
+            <li><strong>Controle:</strong> o sensor lê a umidade do solo (A0) e o Arduino decide quando irrigar (D7).</li>
+            <li><strong>Irrigação:</strong> o relé isola a bomba da lógica e o LCD mostra a umidade em tempo real.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer" id="rodape">
+    <div class="container">
+      <div class="footer-top">
+        <a href="#inicio" class="brand light">
+          <span class="brand-mark">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 3c-1.8 3.2-6 4.6-6 9a6 6 0 0 0 12 0c0-4.4-4.2-5.8-6-9Z" fill="currentColor" opacity=".9"/>
+              <path d="M12 20c-1.2-1.6-2-3.4-2.4-5.4" stroke="#003D31" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span class="brand-name">Ecolrriga</span>
+        </a>
+
+        <nav class="footer-links">
+          <a href="#inicio">Início</a>
+          <a href="#sobre">Sobre</a>
+          <a href="#funcionalidades">Funcionalidades</a>
+          <a href="#previsoes">Previsões</a>
+          <a href="#projeto">Projeto</a>
+          <a href="loja.php">Loja</a>
+        </nav>
+
+        <a href="#" class="footer-social" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 2C6.48 2 2 6.58 2 12.23c0 4.51 2.87 8.34 6.84 9.69.5.09.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.19-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05A9.3 9.3 0 0 1 12 6.93c.85 0 1.71.12 2.51.34 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.59.69.49A10.24 10.24 0 0 0 22 12.23C22 6.58 17.52 2 12 2Z"/>
+          </svg>
+        </a>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Ecolrriga. Todos os direitos reservados.</p>
+        <p class="footer-tags">Tecnologia • Sustentabilidade • Inovação</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script type="module" src="js/viewer.js"></script>
+</body>
+</html>
