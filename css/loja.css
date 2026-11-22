@@ -453,6 +453,9 @@ a.stat-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-card);
 .actions-col { white-space: nowrap; }
 td.actions-col { text-align: right; }
 td.actions-col form { display: inline-block; margin-left: 5px; vertical-align: middle; }
+/* Ações em grade 2×2 (ver, editar / status, excluir) */
+.actions-grid { display: grid; grid-template-columns: repeat(2, 34px); gap: 6px; justify-content: end; }
+td.actions-col .actions-grid form { display: block; margin: 0; }
 .admin-table .icon-btn { width: 34px; height: 34px; }
 .admin-table .icon-btn svg { width: 16px; height: 16px; }
 

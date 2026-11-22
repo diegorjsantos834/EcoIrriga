@@ -1,3 +1,5 @@
+<p align="center"><img src="docs/img/logo-animada.gif" alt="Logo Ecolrriga" width="480"></p>
+
 # Ecolrriga — Tecnologia a favor do verde
 
 Sistema de irrigação automática que mede a umidade do solo e aciona a bomba d'água apenas quando necessário, alimentado por energia solar. Projeto de **Sistemas Embarcados**.
@@ -7,6 +9,10 @@ O repositório reúne três partes:
 1. **Sistema embarcado** (Arduino): sensor de solo, relé, bomba, LCD e energia solar.
 2. **Case impresso em 3D**: 4 peças em STL, com visualizador 3D na landing page.
 3. **Site e loja**: landing page (HTML/CSS/JS) e loja em PHP + MySQL com CRUD completo.
+
+## Visão geral
+
+![Landing page do Ecolrriga](docs/img/01-landing.png)
 
 ## Hardware
 
@@ -22,7 +28,13 @@ O repositório reúne três partes:
 | Bateria 18650 + conversor boost | Armazena a energia e entrega 5 V ao Arduino |
 | Chave gangorra | Liga/desliga o sistema |
 
-Esquema de ligação (Fritzing): [`img/esquema.png`](img/esquema.png)
+Esquema de ligação (Fritzing):
+
+![Esquema elétrico no Fritzing](img/esquema.png)
+
+Na landing page, a seção "Projeto" apresenta o esquema com a explicação de cada bloco:
+
+![Seção Projeto da landing page](docs/img/05-esquema.png)
 
 **Funcionamento:** o painel solar carrega a bateria pelo TP4056; o boost entrega 5 V ao Arduino. O Arduino lê a umidade no A0 e, quando o solo está seco, liga o relé (D7) para acionar a bomba. A umidade aparece no LCD em tempo real.
 
@@ -30,10 +42,34 @@ Esquema de ligação (Fritzing): [`img/esquema.png`](img/esquema.png)
 
 Quatro peças em [`models/`](models): `Caixa`, `Estantes`, `Arco` e `Tampa` (arquivos `* Case SE.stl`), impressas em 3D. A landing page tem um visualizador (Three.js) com órbita, slider de explosão e chips para ligar/desligar cada peça.
 
+### Visualizador 3D
+
+| Montado | Explodido |
+|---|---|
+| ![Modelo 3D montado](docs/img/03-modelo-3d.png) | ![Modelo 3D explodido](docs/img/04-modelo-3d-explodido.png) |
+
 ## Site e loja
 
 - **Landing page:** `index.html`, `css/`, `js/` — HTML, CSS e JavaScript puros, responsiva, com gráfico em canvas (dados de previsão ilustrativos).
+
+![Previsão de períodos secos e modelo 3D](docs/img/02-previsao.png)
 - **Loja (PHP + MySQL):** vitrine com busca e filtro, carrinho em sessão, checkout e confirmação de pedido.
+### Loja
+
+| Vitrine | Produto |
+|---|---|
+| ![Vitrine da loja](docs/img/06-loja.png) | ![Página do produto](docs/img/07-produto.png) |
+
+![Carrinho de compras](docs/img/08-carrinho.png)
+
+### Painel administrativo
+
+![Painel administrativo](docs/img/09-admin-painel.png)
+
+| CRUD de produtos | CRUD de clientes |
+|---|---|
+| ![CRUD de produtos](docs/img/10-admin-produtos.png) | ![CRUD de clientes](docs/img/11-admin-clientes.png) |
+
 - **Painel admin:** dashboard com consultas agregadas, CRUD de **produtos** e **clientes** e atualização de status de **pedidos**.
 
 ### Banco de dados
@@ -77,6 +113,7 @@ Só a landing page (sem PHP/banco): `powershell -ExecutionPolicy Bypass -File se
 index.html, css/, js/   Landing page e visualizador 3D
 models/                 STLs do case
 img/esquema.png         Esquema elétrico (Fritzing)
+docs/img/               Capturas de tela usadas neste README
 db/ecolrriga.sql        Banco de dados
 config/, includes/      Conexão PDO e funções compartilhadas
 loja.php, produto.php, carrinho.php, checkout.php, pedido.php
@@ -86,4 +123,4 @@ serve.ps1, serve-php.ps1  Scripts para rodar localmente
 
 ## Equipe
 
-- Ana Fagundes, Diego Rodrigues, Gabriel Araujo e Guilherme Araujo
+[Nomes dos integrantes]

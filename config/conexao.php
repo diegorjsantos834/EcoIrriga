@@ -15,7 +15,7 @@
 
 // --- Credenciais do banco (padrão do XAMPP) --------------------------------
 define('DB_HOST', '127.0.0.1');   // servidor MySQL
-define('DB_PORT', '3306');        // porta padrão do MySQL
+define('DB_PORT', '3307');        // porta padrão do MySQL
 define('DB_NAME', 'ecolrriga');   // nome do banco (criado por db/ecolrriga.sql)
 define('DB_USER', 'root');        // usuário padrão do XAMPP
 define('DB_PASS', '');            // senha padrão do XAMPP = vazia

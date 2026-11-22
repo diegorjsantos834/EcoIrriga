@@ -104,6 +104,7 @@ include __DIR__ . '/../includes/header.php';
                   </span>
                 </td>
                 <td class="actions-col">
+                <div class="actions-grid">
                   <!-- READ (detalhe) -->
                   <a class="icon-btn" href="../produto.php?id=<?= (int) $p['id'] ?>" title="Ver na loja" aria-label="Ver na loja">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
@@ -142,6 +143,7 @@ include __DIR__ . '/../includes/header.php';
                       </svg>
                     </button>
                   </form>
+                </div>
                 </td>
               </tr>
             <?php endforeach; ?>
