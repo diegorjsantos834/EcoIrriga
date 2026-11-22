@@ -86,4 +86,4 @@ serve.ps1, serve-php.ps1  Scripts para rodar localmente
 
 ## Equipe
 
-# Ana Fagundes, Diego Rodrigues, Gabriel Araujo e Guilherme Araujo
+- Ana Fagundes, Diego Rodrigues, Gabriel Araujo e Guilherme Araujo
